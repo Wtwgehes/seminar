@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Seminar | Lovely Jane C. Quisote</title>
   <style>
-    /* Reset some default styles */
+    :root {
+      --primary-color: #2c3e50;
+      --accent-color: #2980b9;
+      --light-color: #ecf0f1;
+      --text-color: #333;
+      --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -13,98 +20,127 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: var(--font-main);
+      background-color: var(--light-color);
+      color: var(--text-color);
       line-height: 1.6;
-      background-color: #f9f9f9;
-      color: #333;
+    }
+
+    header {
+      background-color: var(--primary-color);
+      padding: 20px 0;
+      text-align: center;
+      color: white;
     }
 
     nav {
-      background-color: #4CAF50;
-      padding: 1em 0;
+      background-color: var(--accent-color);
+      padding: 15px 0;
     }
 
     nav ul {
       list-style: none;
       display: flex;
       justify-content: center;
-      gap: 2em;
+      gap: 40px;
+      margin: 0;
     }
 
     nav ul li {
       color: white;
       font-weight: bold;
       cursor: pointer;
-      transition: color 0.3s;
+      transition: opacity 0.3s ease;
     }
 
     nav ul li:hover {
-      color: #e0e0e0;
+      opacity: 0.7;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
     }
 
     section {
-      padding: 2em;
-      max-width: 800px;
-      margin: auto;
+      margin-bottom: 60px;
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    #Home {
-      background-color: #ffffff;
-    }
-
-    #About {
-      background-color: #f1f1f1;
-    }
-
-    #Contact {
-      background-color: #ffffff;
+    section h2 {
+      color: var(--accent-color);
+      margin-bottom: 15px;
     }
 
     section p {
-      font-size: 1.1em;
+      font-size: 1.1rem;
     }
 
-    /* Responsive navigation for mobile */
+    footer {
+      background-color: var(--primary-color);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+    }
+
     @media (max-width: 600px) {
       nav ul {
         flex-direction: column;
-        align-items: center;
+        gap: 20px;
+      }
+
+      section {
+        padding: 20px;
       }
     }
   </style>
 </head>
 <body>
 
+  <header>
+    <h1>Lovely Jane C. Quisote</h1>
+    <p>Trainee | BSIT Graduate | Database Specialist</p>
+  </header>
+
   <nav>
     <ul>
-      <li onclick="scrollToSection('Home')">Home</li>
-      <li onclick="scrollToSection('About')">About</li>
-      <li onclick="scrollToSection('Contact')">Contact</li>
+      <li onclick="scrollToSection('home')">Home</li>
+      <li onclick="scrollToSection('about')">About</li>
+      <li onclick="scrollToSection('contact')">Contact</li>
     </ul>
   </nav>
 
-  <section id="Home">
-    <h2>Welcome</h2>
-    <p>I am <strong>Lovely Jane C. Quisote</strong>, a dedicated trainee.</p>
-  </section>
+  <main>
+    <section id="home">
+      <h2>Home</h2>
+      <p>Hello! I’m <strong>Lovely Jane C. Quisote</strong>, a motivated trainee passionate about technology and continuous learning.</p>
+    </section>
 
-  <section id="About">
-    <h2>About Me</h2>
-    <p>Graduate of Mindanao State University - Buug, with a BS in Information Technology majoring in Database Systems.</p>
-  </section>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>I graduated from <strong>Mindanao State University – Buug</strong> with a Bachelor of Science in Information Technology, majoring in Database Systems. My background combines technical knowledge with a passion for data management and systems development.</p>
+    </section>
 
-  <section id="Contact">
-    <h2>Contact</h2>
-    <p>You can reach me at <strong>0970-047-2764</strong>.</p>
-  </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>If you’d like to reach out, you can contact me at:</p>
+      <p><strong>Phone:</strong> 0970 047 2764</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Lovely Jane C. Quisote. All rights reserved.</p>
+  </footer>
 
   <script>
-    // Simple scroll function
     function scrollToSection(id) {
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
     }
   </script>
-
 </body>
 </html>
- 
